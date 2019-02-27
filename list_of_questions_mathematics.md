@@ -63,27 +63,62 @@
 ## Basics of Probability and Informaion Theory
 1. Compare "Frequentist probability" vs. "Bayesian probability"?
   **Frequenist**
-  - It is an interpretation of probability that an event's probability is limited by its relative frequence in a large number of trials i.e p = lim n->inf k/n. If our distribution is bernoulli w/ 1 has probability p and 0 has 1-p then the sample success rate would be p' = (X_1 + ... + X_n )/n . We can talk about p' conditional on p but not the other way around.
-  - The previous probability is a random variable and the convidence interval is depe
-1. What is a random variable?
-1. What is a probability distribution?
-1. What is a probability mass function?
-1. What is a probability density function?
+  - It is an interpretation of probability that an event's probability is limited by its relative frequence in a large number of trials of indentical trials.  
+  Data vary
+  
+  **Bayesian**
+  P = outcome/possibilities and each outcome is equally likely
+  For varying initial conditions what are the outcomes.
+  Data is fixed
+  Parameters vary and there is a level of uncertainity
+  
+1. What is a random variable?  
+A variable whos outcome comes from chance processes and is based on a random phenomenom
+1. What is a probability distribution?  
+ A distribution of how likely an event outcome is to happen. Uniform for example assums that the randomvariable can have a value with the same probability.
+ 
+1. What is a probability mass function?  
+function that gives the probability to a discrete random variable i.e --1--3---7--> .2 .5 .3
+
+1. What is a probability density function?  
+Continues rather than discrete variables and the values of the probability are not probabilities as such but must be integrated over an interval to yield a probability
+
 1. What is a joint probability distribution?
-1. What are the conditions for a function to be a probability mass function?
-1. What are the conditions for a function to be a probability density function?
+The joint probability is the distribution from two variables can be expressed with individual joint probability density/mass functions called marginal distributions. The conditional probability distribution is the probabilities of any subset of the variables conditioned on the values of the remaining variables.
+
+1. What are the conditions for a function to be a probability mass function?    
+Discrete or countably infinite i.e 1/(2^i) for i = 1,2,3
+
+1. What are the conditions for a function to be a probability density function?  
+Continuous over a sample space
+
 1. What is a marginal probability? Given the joint probability function, how will you calculate it?
+Integrate the joint probability with respect to that one variable.
+
 1. What is conditional probability? Given the joint probability function, how will you calculate it?
-1. State the Chain rule of conditional probabilities.
+The joint distribution divided by the marginal distribution of y. To get the marginal distribution again we integrate with respect to y.
+
+1. State the Chain rule of conditional probabilities.  
+The chain rule is the calculation of any member in the joint distribution of a set of random variables using only the conditional probabilities. I.E P(A Intersect B) = P(A|B) \* P (B)
+
 1. What are the conditions for independence and conditional independence of two random variables?
-1. What are expectation, variance and covariance?
+1. What are expectation, variance and covariance?  
+Expectation is the expected value from a distribution  
+Variance is the average of the squared difference from the mean. std squared
+Covariance is the degree two which two variables are linearly associated. If the variables are independednt then the covariance is 0.
+Cov(X,Y) = E[(X-E[X])(Y-E[Y])]
+         == E[XY] - E[X]E[Y]
+
+
 1. Compare covariance and independence.
 1. What is the covariance for a vector of random variables?
 1. What is a Bernoulli distribution? Calculate the expectation and variance of a random variable that follows Bernoulli distribution?
 1. What is a multinoulli distribution?
 1. What is a normal distribution?
 1. Why is the normal distribution a default choice for a prior over a set of real numbers?
-1. What is the central limit theorem?
+1. What is the central limit theorem?  
+States that if enough samples are sampled from a distribution with a finite amount of variance then the mean of the samples will equal or approach the mean of the population.
+
 1. What are exponential and Laplace distribution?
 1. What are Dirac distribution and Empirical distribution?
 1. What is mixture of distributions?
@@ -91,6 +126,7 @@
 1. Is Gaussian mixture model a universal approximator of densities?
 1. Write the formulae for logistic and softplus function.
 1. Write the formulae for Bayes rule.
+P(A|B) =[ Pr(B|A)P(A)]/P(B)
 1. What do you mean by measure zero and almost everywhere?
 1. If two random variables are related in a deterministic way, how are the PDFs related?
 1. Define self-information. What are its units?
@@ -101,9 +137,7 @@
 1. What are structured probabilistic models or graphical models?
 1. In the context of structured probabilistic models, what are directed and undirected models? How are they represented?
 What are cliques in undirected structured probabilistic models?
-1. What is a confidence Interval?
-    
-  
+
   http://www.stat.yale.edu/Courses/1997-98/101/confint.htm
 
 ## Confidence interval
