@@ -62,6 +62,9 @@
 
 ## Basics of Probability and Informaion Theory
 1. Compare "Frequentist probability" vs. "Bayesian probability"?
+  **Frequenist**
+  - It is an interpretation of probability that an event's probability is limited by its relative frequence in a large number of trials i.e p = lim n->inf k/n. If our distribution is bernoulli w/ 1 has probability p and 0 has 1-p then the sample success rate would be p' = (X_1 + ... + X_n )/n . We can talk about p' conditional on p but not the other way around.
+  - The previous probability is a random variable and the convidence interval is depe
 1. What is a random variable?
 1. What is a probability distribution?
 1. What is a probability mass function?
@@ -98,12 +101,30 @@
 1. What are structured probabilistic models or graphical models?
 1. In the context of structured probabilistic models, what are directed and undirected models? How are they represented?
 What are cliques in undirected structured probabilistic models?
+1. What is a confidence Interval?
+    
+  
+  http://www.stat.yale.edu/Courses/1997-98/101/confint.htm
 
 ## Confidence interval
 1. What is population mean and sample mean?
+  Population mean is the true mean(mu) and the sample mean (xhat) is the mean taking from the sampling.
 1. What is population standard deviation and sample standard deviation?
+std = root(sum(x-m)^2/N))
+sample standard deviation =  root(sum(x-mu_sample)^2/(n-1))
+We divide by n-1 on sample because when calculating the sample std the average of all sample std for all samples is equal to the population std. If we divided by n and not n-1 for all samples we would not be left with the average std and thus the sample would be biased if we include all n samples.
+
 1. Why population s.d. has N degrees of freedom while sample s.d. has N-1 degrees of freedom? In other words, why 1/N inside root for pop. s.d. and 1/(N-1) inside root for sample s.d.? (Here)
+Answered above
+
 1. What is the formula for calculating the s.d. of the sample mean?
+sample standard deviation =  root(sum(x-mu_sample)^2/(n-1))
+
 1. What is confidence interval?
+A condfidence interval is gives the estimated range of values whihch is likely to include a population parameter. The interval is real values that can be calculated from the confidence level. i.e -1.96,1.96 is the 95% condfidence level and the area of the distribution accounds for 95%. i.e .005 p level has 99% certainity. What this means a confidence level C i.e .9 .95 covers 95 percent of the distribution. The value z (1.96 in this case) in this link represent the points on the density curve such that obersving a value greater than z is equal to the p is the critical value of the distribution.
+
 1. What is standard error?
+Typically standard deviation for population of interest is not known. The stard deviation is replaced with an estimated standared deviation s known as the the standard error. Standard error is an esimate for the true standard deviation. Standard error is esimate for true value and so the sample mean x is no longer normal with population mean and the sample deviation (std/root(n)) Instead the sample mean follow a _t distribution_ with mean u and standard deviation (sample std/root(n)). The t distribution becomes closer to the normal distribution since the standard error approaches the standad deviation.
+
+degrees of freedom is how far away it is from the true standard deviation. i.e if your sample is n you have n-1 degrees of freedom
 
